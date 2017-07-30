@@ -2,6 +2,18 @@ var {app} = require('../0-server/server');
 var {PublicResource, PublicResourceEvent} = require('./resourceModel');
 const Utils = require('../Utils');
 
+var addNewResource = () => {
+    app.post('/resources', (req, res) => {
+        var body = req.body;
+        var newResource = new PublicResource(body);
+        newResource.save().then(r => {
+            res.send(r);
+        }).catch(e => {
+            res.status(400).send(e);
+        })
+    });
+}
+
 var resourcesPost = () => {
     app.post('/resources/:resourceId', (req, res) => {
         var body = req.body;
@@ -88,5 +100,6 @@ function addEventToResource(resourceId, ev) {
 
 module.exports = {
     resourcesGet,
-    resourcesPost
+    resourcesPost,
+    addNewResource
 };

@@ -11,9 +11,6 @@ userMethods.userPost();
 //bulletinMethods.userPut();
 //bulletinoMethods.userGet();
 
-//todoMethods.userPost();
-//todoMethods.userPut();
-//todoMethods.userGet();
-
+resourceMethods.addNewResource();
 resourceMethods.resourcesGet();
 resourceMethods.resourcesPost();
