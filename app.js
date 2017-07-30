@@ -17,6 +17,7 @@ todoMethods.todoPut();
 todoMethods.todoGet();
 
 
+resourceMethods.addNewResource();
 resourceMethods.resourcesGet();
 resourceMethods.resourcesPost();
 
