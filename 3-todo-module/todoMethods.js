@@ -9,6 +9,7 @@ var todoPost = () => {
     console.log(body);
 
     todo.save().then((todo) => {
+      res.setHeader('Access-Control-Allow-Origin', '*');
       res.send(todo);
     }).catch((e) => {
       res.status(400).send(e);
@@ -20,6 +21,7 @@ var todoPost = () => {
 var todoGet = () => {
   app.get('/todos', (req, res) => {
     Todo.find().then((todos) => {
+      res.setHeader('Access-Control-Allow-Origin', '*');
       res.send(todos);
     }).catch((e) => {
       res.status(400).send(e);
@@ -35,6 +37,7 @@ var todoPut = () => {
       todo.status = req.body.status;
       todo.save().then((todo) => {
         console.log(req.body);
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.send(todo);
       }).catch((e) => {
         res.status(400).send(e);

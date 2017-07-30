@@ -7,6 +7,7 @@ var addNewResource = () => {
         var body = req.body;
         var newResource = new PublicResource(body);
         newResource.save().then(r => {
+            res.setHeader('Access-Control-Allow-Origin', '*');
             res.send(r);
         }).catch(e => {
             res.status(400).send(e);
@@ -20,6 +21,7 @@ var resourcesPost = () => {
         var newEvent = new PublicResourceEvent(body);
 
         addEventToResource(req.params.resourceId, newEvent).then(updatedResource => {
+            res.setHeader('Access-Control-Allow-Origin', '*');
             res.send(updatedResource);
         }).catch(err => {
             res.status(400).send({
@@ -39,6 +41,7 @@ var resourcesGet = () => {
             })
             .populate('resource_events')
             .exec((err, item) => {
+                res.setHeader('Access-Control-Allow-Origin', '*');
                 res.send({
                     resources: item
                 });

@@ -9,6 +9,7 @@ var userPost = () => {
     console.log(body);
 
     user.save().then((user) => {
+      res.setHeader('Access-Control-Allow-Origin', '*');
       res.send(user);
     }).catch((e) => {
       res.status(400).send(e);
@@ -20,6 +21,7 @@ var userPost = () => {
 var userGet = () => {
   app.get('/users', (req, res) => {
     User.find().then((users) => {
+      res.setHeader('Access-Control-Allow-Origin', '*');
       res.send(users);
     }).catch((e) => {
       res.status(400).send(e);
