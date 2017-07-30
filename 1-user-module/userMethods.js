@@ -1,6 +1,7 @@
 var {app} = require('../0-server/server');
 var {User} = require('./userModel');
 
+//POST
 var userPost = () => {
   app.post('/users', (req, res) => {
     var body = req.body;
@@ -15,6 +16,19 @@ var userPost = () => {
   });
 }
 
+//GET
+var userGet = () => {
+  app.get('/users', (req, res) => {
+    User.find().then((users) => {
+      res.send(users);
+    }).catch((e) => {
+      res.status(400).send(e);
+    });
+  })
+
+}
+
 module.exports = {
-  userPost
+  userPost,
+  userGet
 }

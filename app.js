@@ -1,20 +1,20 @@
 var userMethods = require('./1-user-module/userMethods');
-//var bulletinMethods = require('./2-bulletin-module/bulletinMethods');
-//var todoMethods = require('./3-todo-module/todoMethods');
+var bulletinMethods = require('./2-bulletin-module/bulletinMethods');
+var todoMethods = require('./3-todo-module/todoMethods');
 //var resourceMethods = require('./4-resource-module/resourceMethods');
 
 userMethods.userPost();
+userMethods.userGet();
 //userMethods.userPut();
-//userMethods.userGet();
 
-//bulletinMethods.userPost();
-//bulletinMethods.userPut();
-//bulletinoMethods.userGet();
+bulletinMethods.bulletinPost();
+//bulletinMethods.bulletinPut();
+bulletinMethods.bulletinGet();
 
-//todoMethods.userPost();
-//todoMethods.userPut();
-//todoMethods.userGet();
+todoMethods.todoPost();
+todoMethods.todoPut();
+todoMethods.todoGet();
 
-//resourceMethods.userPost();
-//resourceMethods.userPut();
-//resourceMethods.userGet();
+//resourceMethods.resourcePost();
+//resourceMethods.resourcePut();
+//resourceMethods.resourceGet();

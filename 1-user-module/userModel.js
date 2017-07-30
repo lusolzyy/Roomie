@@ -4,19 +4,11 @@ const mongoose = require('mongoose');
 var User = mongoose.model('User', {
   name : {
     type: String,
-    required: true,
     trim: true,
-    minlength: 1,
-    unique:false
+    minlength: 1
   },
   imageUrl : {
-    type : String,
-    unique:false
-  },
-  homeId : {
-    type : String,
-    required : true,
-    unique:false
+    type : String
   }
 });
 
