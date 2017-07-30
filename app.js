@@ -4,8 +4,8 @@ var userMethods = require('./1-user-module/userMethods');
 //var resourceMethods = require('./4-resource-module/resourceMethods');
 
 userMethods.userPost();
+userMethods.userGet();
 //userMethods.userPut();
-//userMethods.userGet();
 
 //bulletinMethods.userPost();
 //bulletinMethods.userPut();
