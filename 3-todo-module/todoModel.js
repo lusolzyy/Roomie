@@ -9,7 +9,7 @@ var TodoSchema = new Schema({
   create         : Date,
   due            : Date,
   type           : String,
-  status         : String,
+  status         : Number,
   owner          : {name : String, imageUrl : String},
   doer           : {name : String, imageUrl : String}
 });
