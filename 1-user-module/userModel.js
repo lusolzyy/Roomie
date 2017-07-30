@@ -9,9 +9,6 @@ var User = mongoose.model('User', {
   },
   imageUrl : {
     type : String
-  },
-  homeId : {
-    type : String
   }
 });
 
